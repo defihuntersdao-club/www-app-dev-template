@@ -213,7 +213,7 @@ body.dark-theme .top-header__wallet-id {
   background: #FFFFFF;
   border-radius: 10px;
   padding: 3px;
-  max-width: 256px;
+  text-align: center;
 }
 
 body.dark-theme .top-tabs {
