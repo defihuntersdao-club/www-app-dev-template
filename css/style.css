@@ -143,6 +143,12 @@ body.dark-theme .top-header__wallet-bl {
   background: #21242A;
 }
 
+@media (max-width: 380px) {
+  .top-header__wallet-bl {
+    padding: 3px 2px;
+  }
+}
+
 .top-header__wallet-m {
   font-weight: 600;
   font-size: 16px;
@@ -161,6 +167,14 @@ body.dark-theme .top-header__wallet-m {
   .top-header__wallet-m {
     width: 64px;
     white-space: nowrap;
+  }
+}
+
+@media (max-width: 380px) {
+  .top-header__wallet-m {
+    width: 44px;
+    white-space: nowrap;
+    font-size: 14px;
   }
 }
 
@@ -186,9 +200,17 @@ body.dark-theme .top-header__wallet-id {
   color: #838AA4;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 767px) {
   .top-header__wallet-id {
-    width: 64px;
+    width: 125px;
+  }
+}
+
+@media (max-width: 380px) {
+  .top-header__wallet-id {
+    width: 102px;
+    font-size: 14px;
+    padding: 8px 6px;
   }
 }
 
@@ -203,7 +225,7 @@ body.dark-theme .top-header__wallet-id {
   right: 10px;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 767px) {
   .top-header__wallet-id .status {
     display: none;
   }
@@ -455,7 +477,7 @@ body.dark-theme .networks__active svg path {
   fill: #FFFFFF;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
   .networks__active {
     width: 40px;
     height: 42px;
@@ -1120,6 +1142,7 @@ body.dark-theme .wrapper.bg-wrap {
   text-align: center;
   padding: 14px 14px 19px;
   box-sizing: border-box;
+  border: 0;
 }
 
 .art-button:hover {
@@ -1474,6 +1497,7 @@ body.dark-theme .line-item.tape-ended .line-item__tape, body.dark-theme
   padding: 13px 60px 16px;
   box-sizing: border-box;
   text-decoration: none;
+  border: 0;
 }
 
 body.dark-theme .art-button-2 {
@@ -1642,6 +1666,7 @@ body.dark-theme .grid-item__amount .value, body.dark-theme .grid-item__claimed .
   text-align: center;
   height: 50px;
   padding: 13px 30px 17px;
+  border: 0;
 }
 
 @media (max-width: 767px) {
@@ -2177,5 +2202,14 @@ body.dark-theme .btn-close {
 
 .dropdown-menu.show {
   top: 5px !important;
+}
+
+.btn-primary.disabled, .btn-primary:disabled, .btn-primary[disabled] {
+  color: #fff;
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+  pointer-events: none;
+  opacity: 0.6;
+  font-weight: normal;
 }
 /*# sourceMappingURL=style.css.map */

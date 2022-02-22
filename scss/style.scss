@@ -102,6 +102,9 @@ div {
             body.dark-theme & {
                 background: $darkBlack;
             }
+            @media (max-width: 380px) {
+                padding: 3px 2px
+            }
         }
         &-m {
             font-weight: 600;
@@ -117,6 +120,11 @@ div {
             @media (max-width: 991px) {
                 width: 64px;
                 white-space: nowrap;
+            }
+            @media (max-width: 380px) {
+                width: 44px;
+                white-space: nowrap;
+                font-size: 14px;
             }
         }
         &-id {
@@ -138,8 +146,13 @@ div {
                 background: #262A31;
                 color: #838AA4;
             }
-            @media (max-width: 991px) {
-                width: 64px;
+            @media (max-width: 767px) {
+                width: 125px;
+            }
+            @media (max-width: 380px) {
+                width: 102px;
+                font-size: 14px;
+                padding: 8px 6px;
             }
             & .status {
                 display: inline-block;
@@ -150,7 +163,7 @@ div {
                 position: absolute;
                 top: 9px;
                 right: 10px;
-                @media (max-width: 991px) {
+                @media (max-width: 767px) {
                     display: none;
                 }
             }
@@ -378,7 +391,7 @@ div {
                 fill: $white;
             }
         }
-        @media (max-width: 500px) {
+        @media (max-width: 600px) {
             width: 40px;
             height: 42px;
             box-sizing: border-box;
@@ -950,6 +963,7 @@ div {
     text-align: center;
     padding: 14px 14px 19px;
     box-sizing: border-box;
+    border: 0;
     &:hover {
         background: $blueDark;
         transition: 0.5s;
@@ -1252,6 +1266,7 @@ div {
     padding: 13px 60px 16px;
     box-sizing: border-box;
     text-decoration: none;
+    border: 0;
     body.dark-theme & {
         background: #2D3340;
         color: #929EDA;
@@ -1400,6 +1415,7 @@ div {
             text-align: center;
             height: 50px;
             padding: 13px 30px 17px;
+            border: 0;
             @media (max-width: 767px) {
                 padding: 13px 20px 17px;
             }
@@ -1862,4 +1878,13 @@ body.dark-theme {
 
 .dropdown-menu.show {
     top: 5px !important;
+}
+
+.btn-primary.disabled, .btn-primary:disabled, .btn-primary[disabled] {
+    color: #fff;
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    pointer-events: none;
+    opacity: 0.6;
+    font-weight: normal;
 }
