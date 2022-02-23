@@ -995,18 +995,6 @@ div {
     body.dark-theme & {
         background: $darkBlack;
     }
-    &.active {
-        & .line-item__title::before {
-            background: $blue;
-            transition: 0.5s;
-        }
-        & .line-item__details svg {
-            transform: rotate(180deg);
-        }
-        & .line-item__bottom {
-            transition: height 0.5s;
-        }
-    }
     &__top {
         align-items: center;
         cursor: pointer;
@@ -1033,11 +1021,29 @@ div {
                 color: $white;
             }
         }
+        &.show {
+            & .line-item__title::before {
+                background: $blue;
+                transition: 0.5s;
+            }
+            & .line-item__details svg {
+                transform: rotate(180deg);
+            }
+            & .line-item__bottom {
+                transition: height 0.5s;
+            }
+        }
     }
     &__bottom {
-        height: 0;
-        overflow: hidden;
-        transition: height 0.5s;
+        width: 100%;
+        border: 0;
+        padding: 0;
+        background: none;
+        &.show {
+            position: relative !important;
+            transform: none !important;
+            top: 0 !important;
+        }
         & > .row {
             border-top: 1px solid #E8E8E8;
             padding-top: 19px;
@@ -1308,7 +1314,7 @@ div {
     @media (max-width: 991px) {
         margin-bottom: 20px;
     }
-    &.active {
+    &.show {
         & .grid-item__title::before {
             background: $blue;
             transition: 0.5s;
@@ -1438,14 +1444,20 @@ div {
         }
     }
     &__bottom {
-        height: 0;
-        overflow: hidden;
-        padding-top: 20px;
-        transition: height 0.5s;
+        width: 100%;
+        border: 0;
+        padding: 0;
+        background: none;
+        &.show {
+            position: relative !important;
+            transform: none !important;
+            top: 0 !important;
+        }
     }
     &__info {
         max-width: 460px;
         width: 100%;
+        margin-top: 20px;
         & > div {
             display: flex;
             margin-bottom: 9px;
@@ -1881,10 +1893,10 @@ body.dark-theme {
 }
 
 .btn-primary.disabled, .btn-primary:disabled, .btn-primary[disabled] {
-    color: #fff;
-    background-color: #0d6efd;
-    border-color: #0d6efd;
+    color: #acacac;
+    background-color: #F4F4F4;
+    border-color: #F4F4F4;
     pointer-events: none;
-    opacity: 0.6;
-    font-weight: normal;
+    opacity: 1;
+    font-weight: 600;
 }

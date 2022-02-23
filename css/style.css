@@ -1180,19 +1180,6 @@ body.dark-theme .line-item {
   background: #21242A;
 }
 
-.line-item.active .line-item__title::before {
-  background: #31AFF5;
-  transition: 0.5s;
-}
-
-.line-item.active .line-item__details svg {
-  transform: rotate(180deg);
-}
-
-.line-item.active .line-item__bottom {
-  transition: height 0.5s;
-}
-
 .line-item__top {
   align-items: center;
   cursor: pointer;
@@ -1225,10 +1212,30 @@ body.dark-theme .line-item__top .value {
   color: #FFFFFF;
 }
 
-.line-item__bottom {
-  height: 0;
-  overflow: hidden;
+.line-item__top.show .line-item__title::before {
+  background: #31AFF5;
+  transition: 0.5s;
+}
+
+.line-item__top.show .line-item__details svg {
+  transform: rotate(180deg);
+}
+
+.line-item__top.show .line-item__bottom {
   transition: height 0.5s;
+}
+
+.line-item__bottom {
+  width: 100%;
+  border: 0;
+  padding: 0;
+  background: none;
+}
+
+.line-item__bottom.show {
+  position: relative !important;
+  transform: none !important;
+  top: 0 !important;
 }
 
 .line-item__bottom > .row {
@@ -1548,16 +1555,16 @@ body.dark-theme .grid-item {
   }
 }
 
-.grid-item.active .grid-item__title::before {
+.grid-item.show .grid-item__title::before {
   background: #31AFF5;
   transition: 0.5s;
 }
 
-.grid-item.active .grid-item__details svg {
+.grid-item.show .grid-item__details svg {
   transform: rotate(180deg);
 }
 
-.grid-item.active .grid-item__bottom {
+.grid-item.show .grid-item__bottom {
   display: block;
 }
 
@@ -1696,15 +1703,22 @@ body.dark-theme .grid-item__amount .value, body.dark-theme .grid-item__claimed .
 }
 
 .grid-item__bottom {
-  height: 0;
-  overflow: hidden;
-  padding-top: 20px;
-  transition: height 0.5s;
+  width: 100%;
+  border: 0;
+  padding: 0;
+  background: none;
+}
+
+.grid-item__bottom.show {
+  position: relative !important;
+  transform: none !important;
+  top: 0 !important;
 }
 
 .grid-item__info {
   max-width: 460px;
   width: 100%;
+  margin-top: 20px;
 }
 
 .grid-item__info > div {
@@ -2205,11 +2219,11 @@ body.dark-theme .btn-close {
 }
 
 .btn-primary.disabled, .btn-primary:disabled, .btn-primary[disabled] {
-  color: #fff;
-  background-color: #0d6efd;
-  border-color: #0d6efd;
+  color: #acacac;
+  background-color: #F4F4F4;
+  border-color: #F4F4F4;
   pointer-events: none;
-  opacity: 0.6;
-  font-weight: normal;
+  opacity: 1;
+  font-weight: 600;
 }
 /*# sourceMappingURL=style.css.map */

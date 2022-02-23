@@ -79,7 +79,7 @@ window.onload = function() {
   //copy address
   let btnCopy = document.querySelector('.popup__copy');
   btnCopy.onclick = function() {
-    navigator.clipboard.writeText(walletId);
+    copyToClipboard(walletId);
     btnCopy.classList.add('copied');
     setTimeout(function() {
       btnCopy.classList.remove('copied');
@@ -179,8 +179,8 @@ window.onload = function() {
     let target = event.target.closest('.address-copy');
     if (!target) return;
     let textAddress = target.parentElement.querySelector('button').getAttribute('data-address');
-    console.log(textAddress);
-    navigator.clipboard.writeText(textAddress);
+    
+    copyToClipboard(textAddress);
     target.parentElement.classList.add('copied');
     setTimeout(function() {
       target.parentElement.classList.remove('copied');
@@ -188,44 +188,29 @@ window.onload = function() {
     return false;
   });
 
-
-  //cards
-  let buttons = document.querySelectorAll('.line-item__top');
-  for (let i=0; i<buttons.length;i++) {
-    buttons[i].onclick = function(e) {
-      let parentEl = this.closest('.line-item');
-      let answer = parentEl.querySelector('.line-item__bottom');
-
-
-      if(parentEl.classList.contains('active')) {
-        answer.style.height = 0 + "px";
-        parentEl.classList.remove('active');
-      } else {
-        parentEl.classList.add('active');  
-        let height1 = answer.scrollHeight + 20;
-        answer.style.height = height1 + "px";
-      }
+  // return a promise
+  function copyToClipboard(textToCopy) {
+    // navigator clipboard api needs a secure context (https)
+    if (navigator.clipboard && window.isSecureContext) {
+        // navigator clipboard api method'
+        return navigator.clipboard.writeText(textToCopy);
+    } else {
+        // text area method
+        let textArea = document.createElement("textarea");
+        textArea.value = textToCopy;
+        // make the textarea out of viewport
+        textArea.style.position = "fixed";
+        textArea.style.left = "-999999px";
+        textArea.style.top = "-999999px";
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        return new Promise((res, rej) => {
+            // here the magic happens
+            document.execCommand('copy') ? res() : rej();
+            textArea.remove();
+        });
     }
   }
-
-  let details = document.querySelectorAll('.grid-item__details');
-  for (let i=0; i<details.length;i++) {
-    details[i].onclick = function(e) {
-      let parentEl = this.closest('.grid-item');
-      let answer = parentEl.querySelector('.grid-item__bottom');
-
-
-      if(parentEl.classList.contains('active')) {
-        answer.style.height = 0 + "px";
-        parentEl.classList.remove('active');
-      } else {
-        parentEl.classList.add('active');  
-        let height1 = answer.scrollHeight + 20;
-        answer.style.height = height1 + "px";
-      }
-    }
-  }
-
- 
 
 }
