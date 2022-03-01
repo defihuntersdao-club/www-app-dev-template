@@ -6,10 +6,10 @@ body {
     margin: 0;
     overflow-x: hidden;
     font-family: 'Inter', sans-serif;
-    background: linear-gradient(180deg, #E5E7F5 0%, #FFFFFF 100%);
+    background: linear-gradient(180deg, #E5E7F5 0%, rgba(229, 231, 245, 0.3) 100%);
     min-height: 100vh;
     &.dark-theme {
-        background: linear-gradient(180deg, #2C304F 0%, #212429 100%);
+        background: linear-gradient(180deg, #2C304F 0%, #252836 100%);;
     }
 }
 
@@ -916,7 +916,7 @@ div {
     margin-bottom: 27px;
 }
 
-.wrapper.bg-wrap {
+.bg-wrap {
     background: #FFFFFF;
     box-shadow: 0px 10px 30px rgba(69, 88, 190, 0.1);
     border-radius: 10px;
@@ -1900,3 +1900,1022 @@ body.dark-theme {
     opacity: 1;
     font-weight: 600;
 }
+
+.return-back {
+    margin-top: 34px;
+    margin-bottom: 25px;
+    @media (min-width: 600px) {
+        margin-bottom: 30px;
+    }
+}
+
+.button-back {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: $gray;
+    text-decoration: none;
+    @media (min-width: 600px) {
+        font-size: 18px;
+    }
+    & span {
+        padding-left: 10px;
+    }
+}
+
+.bg-wrap.glob-info {
+    height: 100%;
+}
+
+.glob-info {
+    &__margin-1 {
+        margin-bottom: 35px;
+        @media (min-width: 600px) {
+            margin-bottom: 39px;
+        }
+    }
+    &__margin-2 {
+        margin-bottom: 27px;
+        @media (min-width: 600px) {
+            margin-bottom: 21px;
+        }
+    }
+    &__name {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 130%;
+        color: $black;
+        margin-bottom: 6px;
+        @media (min-width: 600px) {
+            font-size: 24px;
+        }
+        body.dark-theme & {
+            color: $white;
+        }
+    }
+    &__link {
+        & a {
+            text-decoration: none;
+            & span {
+                padding-left: 8px;
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 130%;
+                color: $accent;
+                text-decoration: underline;
+                @media (min-width: 600px) {
+                    padding-left: 15px;
+                    font-size: 20px;
+                }
+            }
+            &:hover span {
+                color: #3D8AFF;
+                text-decoration: none;
+                transition: 0.5s;
+            }
+        }
+    }
+    &__label {
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 130%;
+        color: $black;
+        @media (min-width: 600px) {
+            font-size: 18px;
+        }
+        body.dark-theme & {
+            color: $white;
+        }
+        & span {
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 130%;
+            color: $gray;
+            display: block;
+            @media (min-width: 600px) {
+                font-size: 14px;
+            }
+        }
+    }
+    &__value {
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 130%;
+        color: $black;
+        @media (min-width: 600px) {
+            font-size: 18px;
+        }
+        body.dark-theme & {
+            color: $white;
+        }
+    }
+}
+
+.sale-status {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 130%;
+    text-align: center;
+    color: $black;
+    width: 100%;
+    background: #EDEFF9;
+    border-radius: 8px;
+    padding: 13px 0;
+    height: 55px;
+    margin-bottom: 21px;
+    body.dark-theme & {
+        color: $white;
+        background: #292D34;
+    }
+    @media (min-width: 600px) {
+        font-size: 24px;
+        height: 65px;
+        padding: 15px 0;
+        margin-bottom: 27px;
+    }
+}
+
+.glob-st {
+    &__row {
+        margin-bottom: 11px;
+    }
+    &__label {
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 130%;
+        color: $black;
+        body.dark-theme & {
+            color: $white;
+        }
+        @media (min-width: 600px) {
+            font-size: 20px;
+        }
+    }
+    &__value {
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 130%;
+        color: $black;
+        body.dark-theme & {
+            color: $white;
+        }
+        @media (min-width: 600px) {
+            font-size: 20px;
+        }
+    }
+}
+
+.glog-wrapper {
+    margin-bottom: 55px;
+}
+
+.glob-info-margin {
+    margin-bottom: 20px;
+    @media (min-width: 1199px) {
+        margin-bottom: 0;
+    }
+}
+
+.bg-wrap.glob-st {
+    padding: 24px 24px 35px;
+}
+
+/* round progress */
+
+.glob-st .round-progress {
+    margin-bottom: 20px;
+}
+
+
+$borderWidth: 8px;
+$animationTime: .5s;
+$border-color-default: #efefef;
+$border-color-fill: $accent;
+$size-mobile: 170px;
+$size: 205px;
+$howManySteps: 100; //this needs to be even. 
+
+.round-progress .progress {
+  width: $size-mobile;
+  height: $size-mobile;
+  line-height: $size;
+  background: none;
+  margin: 0 auto;
+  box-shadow: none;
+  position: relative;
+  @media (min-width: 600px) {
+    width: $size;
+    height: $size;
+  }
+  &:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: $borderWidth solid $border-color-default;
+    position: absolute;
+    top: 0;
+    left: 0;
+    body.dark-theme & {
+        border: $borderWidth solid #2D3340;
+    }
+  }
+  > span {
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+  }
+  .progress-left {
+    left: 0;
+  }
+  .progress-bar {
+    width: 100%;
+    height: 100%;
+    background: none;
+    border-width: $borderWidth;
+    border-style: solid;
+    position: absolute;
+    top: 0;
+    border-color: $border-color-fill;
+  }
+  .progress-left .progress-bar {
+    left: 100%;
+    border-top-right-radius: ($size/2);;
+    border-bottom-right-radius: ($size/2);;
+    border-left: 0;
+    -webkit-transform-origin: center left;
+    transform-origin: center left;
+    //animation: loading-2 1.5s linear forwards 1.8s;
+  }
+  .progress-right {
+    right: 0;
+    .progress-bar {
+      left: -100%;
+      border-top-left-radius: ($size/2);;
+      border-bottom-left-radius: ($size/2);;
+      border-right: 0;
+      -webkit-transform-origin: center right;
+      transform-origin: center right;
+      //animation: loading-1 1.8s linear forwards;
+    }
+  }
+  .progress-value {
+    display: flex;
+    border-radius: 50%;
+    font-size: 1rem;
+    text-align: center;
+    line-height: 20px;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    font-weight: 300;
+    div {
+      //margin-top: 10px;
+    }
+    span {
+        display: inline-block;
+        font-weight: normal;
+        font-size: 50px;
+        line-height: 130%;
+        color: $accent;
+        @media (min-width: 600px) {
+            font-size: 65px;
+        }
+    }
+    & em {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 130%;
+        body.dark-theme & {
+            color: $gray;
+        }
+        @media (min-width: 600px) {
+            font-size: 20px;
+        }
+    }
+    & strong {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 130%;
+        color: $black;
+        body.dark-theme & {
+            color: $white;
+        }
+        @media (min-width: 600px) {
+            font-size: 18px;
+        }
+    }
+  }
+}
+
+/* This for loop creates the necessary css animation names 
+Due to the split circle of progress-left and progress right, we must use the animations on each side. 
+*/
+@for $i from 1 through $howManySteps {
+	$stepName: ($i*(100 / $howManySteps));
+
+	//animation only the left side if below 50%
+	@if $i <= ($howManySteps/2) { 
+		.progress[data-percentage="#{$stepName}"] {
+			.progress-right .progress-bar {
+				 animation: loading-#{$i} $animationTime linear forwards;
+			}
+			.progress-left .progress-bar {animation: 0;}
+		}
+	}
+	//animation only the right side if above 50%
+	@if $i > ($howManySteps/2)  {  
+		.progress[data-percentage="#{$stepName}"] {
+			.progress-right .progress-bar {
+				animation: loading-#{($howManySteps/2)} $animationTime linear forwards; //set the animation to longest animation
+			}
+			.progress-left .progress-bar {
+      animation: loading-#{$i - ($howManySteps/2)} $animationTime linear forwards $animationTime;
+    }
+		}
+	}
+}
+
+//animation
+@for $i from 1 through ($howManySteps/2) { 
+	$degrees: (180/($howManySteps/2));
+	$degrees: ($degrees*$i);
+	@keyframes loading-#{$i}{
+    0%{
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100%{
+        -webkit-transform: rotate($degrees);
+			transform: rotate(#{$degrees}deg);
+    }
+	}
+}
+
+.text-tokens {
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 130%;
+    color: $gray;
+    margin-bottom: 26px;
+    @media (min-width: 600px) {
+        font-size: 14px;
+        margin-bottom: 19px;
+    }
+}
+
+
+.tokens-tf {
+    margin-bottom: 64px;
+    @media (min-width: 600px) {
+        margin-bottom: 70px;
+    }
+    &__item {
+        margin-bottom: 20px;
+        @media (min-width: 1199px) {
+            margin-bottom: 0;
+        }
+    }
+    &__margin-1 {
+        margin-bottom: 19px;
+        @media (min-width: 600px) {
+            margin-bottom: 27px;
+        }
+    }
+    &__name {
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 130%;
+        color: $black;
+        margin-bottom: 4px;
+        body.dark-theme & {
+            color: $white;
+        }
+        @media (min-width: 600px) {
+            font-size: 24px;
+            margin-bottom: 6px;
+        }
+    }
+    &__description {
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 130%;
+        color: $gray;
+        @media (min-width: 600px) {
+            font-size: 14px;
+        }
+    }
+    &__text {
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 130%;
+        color: $black;
+        margin-bottom: 36px;
+        body.dark-theme & {
+            color: $white;
+        }
+        @media (min-width: 600px) {
+            font-size: 18px;
+            margin-bottom: 38px;
+        }
+    }
+    & .art-button {
+        width: 100%;
+    }
+    & .allocate .art-button {
+        background: #3D8AFF;
+        &:hover {
+            background: $blueDark;
+        }
+    }
+    & > .disabled {
+        pointer-events: none;
+        opacity: 0.6;
+        & .art-button {
+            color: #acacac;
+            background-color: #F4F4F4;
+            border-color: #F4F4F4;
+            font-weight: 600;
+            body.dark-theme & {
+                background-color: #4a4c52;
+                border-color: #4a4c52;
+            }
+        }
+    }
+}
+
+.switch {
+    margin-bottom: 22px;
+    cursor: pointer;
+    &__title {
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 22px;
+        color: $black;
+        body.dark-theme & {
+            color: $white;
+        }
+        @media (min-width: 600px) {
+            font-size: 24px;
+            line-height: 29px;
+        }
+    }
+    &__btn {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 19px;
+        color: $gray;
+    }
+    & .span-hide {
+        display: none;
+    }
+    &.show {
+        & .span-hide {
+            display: inline-block;
+        }
+        & .span-show {
+            display: none;
+        }
+        & .switch__btn svg {
+            transform: rotate(180deg);
+        }
+    }
+}
+
+.table-collected {
+    background: $white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.wrap-infoblock.show {
+    position: relative !important;
+    transform: none !important;
+    top: 0 !important;
+    border: 0;
+    background: none;
+    border-radius: 0;
+}
+
+.custom-table {
+    background: #FFFFFF;
+    border-radius: 10px;
+    padding: 20px 21px;
+    body.dark-theme & {
+        background: $darkBlack;
+    }
+    &__name {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 130%;
+        color: $black;
+        height: 55px;
+        padding: 14px 0;
+        border-radius: 8px;
+        body.dark-theme & {
+            color: $white;
+        }
+        @media (min-width: 600px) {
+            font-size: 22px;
+            height: 70px;
+            padding: 18px 0;
+        }
+    }
+    & .line-bottom {
+        border-bottom: 1px solid #E8E8E8;
+        padding: 12px 8px;
+        body.dark-theme & {
+            border-bottom: 1px solid #343841;
+        }
+        @media (min-width: 600px) {
+            padding: 18px 10px;
+        }
+        &:last-child {
+            border-bottom: 0;
+            body.dark-theme & {
+                border-bottom: 0;
+            }
+        }
+    }
+    &__title {
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 130%;
+        color: $gray;
+        @media (min-width: 600px) {
+            font-size: 18px;
+        }
+    }
+    &__value {
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 130%;
+        color: $black;
+        body.dark-theme & {
+           color: $white;
+        }
+        @media (min-width: 600px) {
+            font-size: 24px;
+        }
+    }
+    &__value-2 {
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 130%;
+        color: $gray;
+        @media (min-width: 600px) {
+            font-size: 18px;
+        }
+    }
+}
+
+.custom-table_gray .custom-table__name {
+    background: #F4F4F4;
+    body.dark-theme & {
+        background: #292D34;
+    }
+}
+
+.custom-table_light-blue .custom-table__name {
+    background: #EDEFF9;
+    body.dark-theme & {
+        background: #282E48;
+    }
+}
+
+.custom-table_blue .custom-table__name {
+    background: #E2EEFF;
+    body.dark-theme & {
+        background: #273855;
+    }
+}
+
+.wrap-infoblock-1 > div {
+    margin-bottom: 20px;
+}
+
+.custom-table-2 {
+    background: #FFFFFF;
+    border-radius: 10px;
+    padding: 14px 21px;
+    body.dark-theme & {
+        background: $darkBlack;
+    }
+    & table th {
+        text-align: center;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 130%;
+        color: $gray;
+        @media (min-width: 600px) {
+            font-size: 18px;
+            padding-bottom: 20px;
+        }
+    }
+    & .table>:not(:first-child) {
+        border-top: 0;
+    }
+    & .table>:not(caption)>*>* {
+        border-bottom-width: 0;
+    }
+    & table td {
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 130%;
+        text-align: center;
+        color: $black;
+        border-right: 1px solid $white;
+        padding: 19px 13px;
+        min-width: 114px;
+        body.dark-theme & {
+            color: $white;
+            border-right: 1px solid $darkBlack;
+        }
+        @media (min-width: 600px) {
+            font-size: 24px;
+            padding: 23px 19px;
+        }
+        & span {
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 130%;
+            color: $gray;
+            @media (min-width: 600px) {
+                font-size: 18px;
+            }
+        }
+        &:first-child {
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 130%;
+            text-align: left;
+            color: #4558BE;
+            border-radius: 8px 0 0 8px;
+            @media (min-width: 600px) {
+                font-size: 20px;
+            }
+        }
+        &:last-child {
+            border-right: 0;
+            border-radius: 0 8px 8px 0;
+            body.dark-theme & {
+                border-right: 0;
+            }
+        }
+    }
+    & .table-striped>tbody>tr:nth-of-type(odd)>* {
+        body.dark-theme & {
+            background: #292D34;
+        }
+    }
+}
+
+.row.wrap-infoblock-2 {
+    padding: 0 10px;
+    margin-bottom: 20px;
+}
+
+.row-margin {
+    height: 30px;
+    width: 100%;
+    @media (min-width: 600px) {
+        height: 40px;
+    }
+}
+
+.table-networks {
+    margin-top: 20px;
+    @media (min-width: 1199px) {
+        margin-top: 0;
+    }
+    & .table>:not(:first-child) {
+        border-top: 0;
+    }
+    & .custom-table {
+        width: 48%;
+        margin-right: 1.6%;
+        display: inline-block;
+        vertical-align: top;
+        min-height: 318px;
+        @media (min-width: 600px) {
+            width: 31.3%;
+        }
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    & .table {
+        width: 100%;
+        white-space: nowrap;
+        & img {
+            width: 38px;
+            height: auto;
+            padding: 0;
+        }
+    }
+    & .table-responsive {
+        &::-webkit-scrollbar,
+        &::-webkit-scrollbar {
+            width: 8px;
+        }
+        &::-webkit-scrollbar {
+            height: 8px;
+            width: 8px;
+            background: #FFFFFF;
+            border-radius: 2px;
+            body.dark-theme & {
+                background: #21242A;
+            }
+        }
+        &::-webkit-scrollbar-thumb {
+            border-radius: 5px;
+            background-color: #BABDCE;
+            body.dark-theme & {
+                background: $accent;
+            }
+        }
+    }
+    
+}
+
+.info-bl {
+    margin-bottom: 15px;
+    & > div {
+        margin-bottom: 15px;
+    }
+}
+
+.select-bl {
+    position: relative;
+    margin-bottom: 25px;
+    @media (min-width: 1199px) {
+        margin-bottom: 0;
+    }
+    &-default {
+        display: inline-block;
+        color: $gray;
+        text-decoration: none;
+        font-size: 16px;
+        line-height: 19px;
+        border: 1px solid #BABDCE;
+        box-sizing: border-box;
+        border-radius: 10px;
+        font-weight: normal;
+        height: 60px;
+        padding: 20px;
+        background: transparent;
+        outline: none;
+        text-decoration: none;
+        position: relative;
+        width: 100%;
+        body.dark-theme & {
+            border: 2px solid $gray;
+            color: $gray;
+        }
+        & svg path {
+            body.dark-theme & {
+                fill: $gray;
+            }
+        }
+        & svg {
+            position: absolute;
+            top: 26px;
+            right: 18px;
+        }
+        &.show svg {
+            transform: rotate(180deg);
+        }
+    }
+    &__btn {
+        color: $gray;
+        body.dark-theme & {
+            color: $gray;
+        }
+        &.active {
+            color: $black;
+            body.dark-theme & {
+                color: $white;
+            }
+        }
+    }
+    &__links {
+        position: absolute;
+        top: 50px;
+        right: 0;
+        z-index: 5;
+        display: none;
+        width: 100%;
+        @extend %openColorBolder;
+        body.dark-theme & {
+            background: $darkBlack;
+            border: 1px solid #2D3340;
+        }
+        @media (max-width: 500px) {
+            /*right: -168px;*/
+            width: 100%;
+        }
+
+    }
+    &__link {
+        display: flex;
+        justify-content: flex-start;
+        padding-bottom: 8px;
+        padding-top: 0;
+        text-decoration: none;
+        align-items: center;
+        margin-left: 0;
+        color: $gray;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 130%;
+        body.dark-theme & {
+            color: $gray;
+        }
+        &:hover,
+        &.active {
+            color: $black;
+            transition: 0.5s;
+            body.dark-theme & {
+                color: $white;
+            }
+        }
+        &:last-child {
+            padding-bottom: 0;
+        }
+    }
+    & .not-support {
+        color: #FF1066;
+        font-size: 14px;
+        @media (min-width: 1199px) {
+            position: absolute;
+            left: 2px;
+            top: 65px;
+        }
+    }
+}
+
+.list-bl {
+    margin-bottom: 30px;
+    &__description {
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 130%;
+        color: $gray;
+        margin-bottom: 25px;
+        @media (min-width: 600px) {
+            font-size: 18px;
+        }
+    }
+    &__sum-label {
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 130%;
+        color: $black;
+        margin-bottom: 6px;
+        text-align: center;
+        body.dark-theme & {
+            color: $white;
+        }
+        @media (min-width: 1199px) {
+            text-align: left;
+            font-size: 18px;
+        }
+        @media (min-width: 1400px) {
+            font-size: 20px;
+        }
+    }
+    &__sum {
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 130%;
+        color: $accent;
+        text-align: center;
+        margin-bottom: 30px;
+        @media (min-width: 1199px) {
+            margin-bottom: 0;
+            text-align: left;
+        }
+    }
+}
+
+.row.wrap-infoblock-2.margin-2 {
+    margin-bottom: 50px;
+    @media (min-width: 600px) {
+        margin-bottom: 70px;
+    }
+}
+
+.number {
+    padding: 10px;
+    background: #F4F4F4;
+    border-radius: 8px;
+    margin-bottom: 40px;
+    body.dark-theme & {
+        background: #292D34;
+    }
+    &__wrap {
+        @media (max-width: 1400px) {
+            padding: 0 9px;
+        }
+        & > div.col-4 {
+            @media (max-width: 1400px) {
+                padding: 0;
+            }
+            
+        }
+    }
+    &__label {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 130%;
+        color: $gray;
+        background: #FFFFFF;
+        border-radius: 5px;
+        text-align: center;
+        height: 35px;
+        padding: 9px 5px;
+        width: 40px;
+        body.dark-theme & {
+            background: $darkBlack;
+            color: $gray;
+        }
+        @media (min-width: 1199px) {
+            font-size: 16px;
+            padding: 6px 11px;
+            width: 50px;
+        }
+        @media (max-width: 991px) {
+            width: 68%;
+        }
+    }
+    &__minus,
+    &__plus {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 130%;
+        color: $black;
+        background: #FFFFFF;
+        border-radius: 5px;
+        text-align: center;
+        height: 35px;
+        width: 20px;
+        padding: 9px 0;
+        display: block;
+        cursor: pointer;
+        body.dark-theme & {
+            background: $darkBlack;
+            color: $white;
+        }
+        @media (min-width: 1199px) {
+            font-size: 16px;
+            width: 35px;
+            padding: 6px 0;
+        }
+        @media (max-width: 991px) {
+            width: 30%;
+        }
+    }
+    & input {
+        width: 100%;
+        max-width: 100%;
+        border: 0;
+        background: none;
+        text-align: center;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 130%;
+        outline: none;
+        body.dark-theme & {
+            color: $white;
+        }
+    }
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+input[type="number"]:hover,
+input[type="number"]:focus {
+ -moz-appearance: number-input;
+}
+
+
