@@ -299,4 +299,34 @@ window.onload = function() {
     }
   }
 
+  //only mine
+  let checkMine = document.querySelector('.personal__checkbox input');
+  let checkActive = false;
+  let items = document.querySelectorAll('.items-wrap .item');
+
+  function chackActiveCheck() {
+    if(checkMine.checked == true) {
+      checkActive = true;
+    } else {
+      checkActive = false;
+    }
+  }
+  function checkActiveItem() {
+    for(let i=0;i<items.length;i++) {
+      let activeMine = items[i].getAttribute('data-mine');
+      let parent = items[i].closest('.col-12');
+      if(checkActive && activeMine != 1) {
+        parent.classList.add('d-none');
+      } else {
+        parent.classList.remove('d-none');
+      }
+    }
+  }
+  chackActiveCheck();
+  checkActiveItem();
+  checkMine.addEventListener('change', function() {
+    chackActiveCheck();
+    checkActiveItem();
+  });
+
 }
